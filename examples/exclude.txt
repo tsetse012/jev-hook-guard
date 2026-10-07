@@ -1,0 +1,16 @@
+# Exclusion patterns for jev_hook_guard.Exclude. These are placeholders: replace them with your own words.
+#
+# One regular expression per line. Lines are joined with "|" and matched case-insensitively against the text after
+# normalization (fullwidth letters folded, zero-width characters removed, NFC, dash variants to "-", Cyrillic and Greek
+# lookalikes to Latin), and once more against the same text with all whitespace removed.
+# A hit in the prompt, the working directory or the transcript path pins the session: nothing more from it is sent.
+#
+# Write separators as [-_ ]? so "client-x", "client x", "client_x" and "clientx" all match.
+# Blank lines and lines starting with # are ignored. A file with no pattern lines sets Exclude.empty_file.
+
+# Client and company names
+acme[-_ ]?corp
+client[-_ ]?x
+
+# Internal project code names, places, topics
+project[-_ ]?falcon|lakeside[-_ ]?office|payroll
